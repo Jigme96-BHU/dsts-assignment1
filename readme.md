@@ -12,11 +12,11 @@ Dockerized Models: Models are containerized for easy deployment.
 Git Workflow: Version control through GitLab and GitHub.
 
 ## Setup Instructions
-Prerequisites
-Python 3.x
-Docker
-Jupyter Notebook
-Git
+- Prerequisites
+- Python 3.x
+- Docker
+- Jupyter Notebook
+- Git
 
 ## Installation
 
