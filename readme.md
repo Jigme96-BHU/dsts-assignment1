@@ -26,6 +26,7 @@ https://github.com/Jigme96-BHU/dsts-assignment1.git
 
 ## Install the required packages:
 
+```bash
 pip install -r requirements.txt
 
 
