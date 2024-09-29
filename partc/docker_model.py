@@ -1,24 +1,28 @@
-import joblib
+import pickle
 from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression, SGDRegressor, LogisticRegression
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.neural_network import MLPClassifier
 from sklearn.metrics import mean_squared_error, accuracy_score,confusion_matrix
 
-def train_model(X, y, task='', model_type=''):
+def train_model(X, y, task='regression', model_type='linear', model_save_path='model.pkl'):
     # Split the data into training and test sets
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
 
     if task == 'regression':
         if model_type == 'linear':
             # Linear Regression
-            model = joblib.load('./model/linear_regression_model.pkl')
+            model = LinearRegression()
         elif model_type == 'sgd':
             # SGD Regressor
-            model = joblib.load('./model/sgd_regression_model.pkl')
+            model = SGDRegressor(max_iter=1000, learning_rate='constant', eta0=0.000021)
         else:
             raise ValueError(f"Unknown model type: {model_type}")
         
         # Train the model
         model.fit(X_train, y_train)
-
+        
         # Make predictions
         y_pred = model.predict(X_test)
         
@@ -29,21 +33,21 @@ def train_model(X, y, task='', model_type=''):
     elif task == 'classification':
         if model_type == 'mlp':
             # MLP Classifier
-            model = joblib.load('./model/mlp_classification_model.pkl')
-
+            model = MLPClassifier(hidden_layer_sizes=(100,), max_iter=500)
+        elif model_type == 'log':
+            model = LogisticRegression()
         elif model_type == 'random_forest':
             # Random Forest Classifier
-            model = joblib.load('./model/random_forest_classification_model.pkl')
+            model = RandomForestClassifier(n_estimators=100)
         elif model_type == 'decision_tree':
             # Decision Tree Classifier
-            model = joblib.load('./model/decision_tree_classification_model.pkl')
-
+            model = DecisionTreeClassifier()
         else:
             raise ValueError(f"Unknown model type: {model_type}")
         
         # Train the model
         model.fit(X_train, y_train)
-        
+     
         # Make predictions
         y_pred = model.predict(X_test)
         
