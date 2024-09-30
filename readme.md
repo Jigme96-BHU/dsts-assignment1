@@ -47,5 +47,6 @@ Link: https://public.tableau.com/views/dsts-assignment1/Dashboard1?:language=en-
 
 #### run docker models
 
+```bash
 docker run jigme26/dsts-assignment:latest
-
+```
