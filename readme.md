@@ -37,7 +37,7 @@ pip install -r requirements.txt
 jupyter notebook assignment1.ipynb
 ```
 
-### Tableau Dashboard
+## Tableau Dashboard
 
 The interactive visualization for this project is available on Tableau:
 
@@ -49,4 +49,41 @@ Link: https://public.tableau.com/views/dsts-assignment1/Dashboard1?:language=en-
 
 ```bash
 docker run jigme26/dsts-assignment:latest
+```
+
+## Exected Output
+- **Data Exploration**: You will see data visualizations and insights regarding the dataset, such as histograms and Bar plots.
+- **Regression Models**: Running the regression script will produce metrics like:
+  - MSE - mean score error (a common metric used to evaluate the performance of regression models) 
+- **Classification Models**: After running the ipynb script, the classification output will include:
+  - Model accuracy(It represents the proportion of correctly classified instances out of the total number of instances.)
+  - Confusion matrixa (a table that is used to describe the performance of a classification model.)
+- **Tableau Visualizations**: If using `dsts-assignment1.twb` or click the link, you'll get interactive visualizations related to Sydney's restaurants data.
+
+- **docker run jigme26/assignment1**:
+
+```bash
+----------------------------------------------------------------------
+Mean Squared Error for Linear Regression: 0.19354723644735014
+Mean Squared Error for Sgd Regression: 0.1941190177703764
+
+
+-----------------------------------------------------------------------
+Accuracy for Log Classification: 0.8005974607916355
+Confusion Matrix for Log Classification:
+[[752  86]
+ [181 320]]
+Accuracy for Random forest Classification: 0.8416728902165795
+Confusion Matrix for Random forest Classification:
+[[728 110]
+ [102 399]]
+Accuracy for Mlp Classification: 0.7251680358476476
+Confusion Matrix for Mlp Classification:
+[[745  93]
+ [275 226]]
+Accuracy for Decision tree Classification: 0.8125466766243465
+Confusion Matrix for Decision tree Classification:
+[[716 122]
+ [129 372]]
+
 ```
