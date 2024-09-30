@@ -4,8 +4,11 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import OneHotEncoder
 
+import warnings
+warnings.filterwarnings("ignore", category=FutureWarning)
 
 def preprocess_data(file_path, task='regression'):
+
     # Load the dataset
     data = pd.read_csv(file_path)
     
