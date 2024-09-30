@@ -29,10 +29,13 @@ https://github.com/Jigme96-BHU/dsts-assignment1.git
 ```bash
 pip install -r requirements.txt
 
+```
 
 ## Run the Jupyter notebook:
 
+```bash
 jupyter notebook assignment1.ipynb
+```
 
 ### Tableau Dashboard
 
